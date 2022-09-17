@@ -1,11 +1,11 @@
 
     <nav class="navbar navbar-light fixed-bottom" style="background-color: #7678ED;">
         <a class="navbar-brand" href="#">
-            <img src="../../static/image/pill-e_logo.png" width="100" height="50" class="d-inline-block align-top" alt="">
+            <img src="../../static/image/logo.png" width="100" height="50" class="d-inline-block align-top" alt="">
           </a>
         <ul class="nav nav-pills">
             <li class="nav-item" style="color:#3D348B"><a href="{{ url_for('home') }}" class="nav-link {% if home %}active{% endif %}">Home</a></li>
-            <li class="nav-item" style="color:#F7B801"><a href="{{ url_for('settings') }}" class="nav-link {% if ref %}active{% endif %}">Settings</a></li>
+            <li class="nav-item" style="color:#F7B801"><a href="{{ url_for('settings') }}" class="nav-link {% if settings %}active{% endif %}">Settings</a></li>
         </ul>
     </nav>
 
