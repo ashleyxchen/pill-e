@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<style>
+    h1 {
+        color: #3D348B;
+        font-family: 'Enriqueta', arial, serif;
+        font-size: 42px;
+        font-weight: 800;
+        text-align: left;
+
+    }
+    h2 {
+        color:#F7B801;
+        font-family: 'Enriqueta', arial, serif;
+        font-weight: 600;
+        text-align: left;
+    }
+
+    .card{
+    padding: 1.5em .5em .5em;
+    border-radius: 2em;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    width: 100%;
+    }
+</style>
+<div style="background-color:#7678ED; padding-top: 1em; padding-bottom: 0.4em; ">
+    <h1> &nbsp;Settings</h1>
+</div>
+
+<div class="card-deck mt-4">
+    <div class="card text-center mt-5">
+      <div class="card-body">
+        <h5 class="card-title">{{ pill1Name }}</h5> <!--fill the form out -->
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p> <!--put the time here-->
+        <a href="pill1" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    <div class="card text-center mt-5">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        <a href="pill2" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}
