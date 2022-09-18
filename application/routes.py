@@ -110,16 +110,28 @@ def settings():
     pill1Configs = {}
     pill1Config_file = open('pill1Configs.json', 'r')
     pill1Configs = json.load(pill1Config_file)
-    pill1Config_file.close()
     pill1Name = pill1Configs['pill1Name']
+    pill1Count = pill1Configs['pill1Count']
+    pill1Dosage = pill1Configs['pill1Dosage']
+    pill1Config_file.close()
+    
 
     pill2Configs = {}
     pill2Config_file = open('pill2Configs.json', 'r')
     pill2Configs = json.load(pill2Config_file)
-    pill2Config_file.close()
     pill2Name = pill2Configs['pill2Name']
+    pill2Count = pill2Configs['pillCount']
+    pill2Dosage = pill2Configs['pillDosage']
+    pill2Config_file.close()
+    
    
-    return render_template("settings.html", settings=True, pill1Name=pill1Name, pill2Name=pill2Name)
+    return render_template("settings.html", settings=True, 
+    pill1Name=pill1Name, 
+    pill2Name=pill2Name,
+    pill1Count= pill1Count,
+    pill1Dosage = pill1Dosage,
+    pill2Count=pill2Count,
+    pill2Dosage=pill2Dosage)
     
 
 @app.route('/pill1', methods=['GET', 'POST'])
