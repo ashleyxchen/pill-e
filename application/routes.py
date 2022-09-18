@@ -1,3 +1,4 @@
+import datetime
 from hashlib import blake2b
 from application import app
 from flask import render_template, request, redirect, url_for, session, jsonify
@@ -48,8 +49,57 @@ def home():
     else:
         dateApd = 'th'
     
+    with open('pill1Configs.json') as pill1Config_file:
+        pill1Configs = json.load(pill1Config_file)
+        pill1Name = pill1Configs['pill1Name']
+        pill1Time = pill1Configs['time1']
+        pill1Config_file.close()
+    
+    hour = datetime.datetime.now().hour
+    min = datetime.datetime.now().minute
+    print("this is min", min)
+    pill1Hour = pill1Time[0:2]
+    pill1Hour = int(pill1Hour)
+    pill1Min = pill1Time[3]
+    pill1Min = int(pill1Min)
 
-    return render_template('home.html', home = True, month = month, dateApd = dateApd, time = date.today())
+    if hour > pill1Hour:
+        if min > pill1Min:
+            status1 = "Dispensed"
+    else:
+        status1 = "Due"
+
+    with open('pill2Configs.json') as pill2Config_file:
+        pill2Configs = json.load(pill2Config_file)
+        pill2Name = pill2Configs['pill2Name']
+        pill2Time = pill2Configs['time']
+        pill2Config_file.close()
+    
+
+    pill2Hour = pill2Time[0:2]
+    print(pill2Hour)
+    pill2Hour = int(pill2Hour)
+    pill2Min = pill2Time[3]
+    pill2Min = int(pill2Min)
+    print(pill2Min)
+
+    if hour > pill2Hour:
+        if min > pill1Min:
+            status2 = "Dispensed"
+    else:
+        status2 = "Due"
+
+    return render_template('home.html', home = True, 
+    pill1Name = pill1Name, 
+    pill1Time=pill1Time, 
+    month = month, 
+    dateApd = dateApd, 
+    time = date.today(), 
+    status1 = status1,
+    status2=status2,
+    pill2Name=pill2Name,
+    pill2Time=pill2Time
+    )
 
 @app.route('/settings', methods=['GET', 'POST'])
 def settings():
@@ -69,8 +119,8 @@ def settings():
 
 @app.route('/pill1', methods=['GET', 'POST'])
 def pill1():
-    pillCount = 0
-    pillDosage = 0
+    pill1Count = 0
+    pill1Dosage = 0
     pill1Name = ""
     
     if request.method == 'POST': 
@@ -88,8 +138,8 @@ def pill1():
 
         if 'pill1Dosage' in request.form.keys():
             pill1Dosage = int(request.form['pill1Dosage'])
-            print(pillDosage)
-            pill1Configs['pillDosage'] = pill1Dosage
+            print(pill1Dosage)
+            pill1Configs['pill1Dosage'] = pill1Dosage
         else: pill1Dosage = pill1Configs['pill1Dosage'] 
 
         if 'pill1Name' in request.form.keys():
