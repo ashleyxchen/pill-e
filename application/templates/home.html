@@ -17,32 +17,40 @@
         text-align: left;
     }
     .card{
-    padding: 1.5em .5em .5em;
     border-radius: 2em;
     text-align: center;
     box-shadow: 0 5px 10px rgba(0,0,0,.2);
     width: 100%;
-    background-color: #fff;
+    background-color: #F7B801;
+    margin:0px 0px -40px 0px;
+
 }
 
 </style>
 
 <div style="background-color:#7678ED; padding-top: 1em; padding-bottom: 0.4em; ">
 <h1> &nbsp;Hello</h1>
-<h2>  &nbsp; Today is Sept {{ time.day }}th </h2> <!--hard code for now-->
+<h2>  &nbsp; Today is {{month}} {{ time.day }}{{ dateApd }} </h2> <!--hard code for now-->
 </div>
 
-<img src="../static/image/ourFace.png" width="100%" height="100%">
+<img src="../static/image/ourFace.png" width="100%" height="60%" style="margin:0px 0px -40px 0px;">
 
 <div class="card-deck mt-4" style="padding-left: 1em; padding-right: 1em;">
     <div class="card text-center mt-5">
       <div class="card-body">
-        <h5 class="card-title">TIME</h5> <!--fill the form out -->
+        <h5 class="card-title" style="align-items: left;">TIME</h5> <!--fill the form out -->
         <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p> <!--put the time here-->
       </div>
     </div>
   </div>
 
-
-
+  <div class="card-deck mt-4" style="padding-left: 1em; padding-right: 1em;">
+    <div class="card text-center mt-5">
+      <div class="card-body">
+        <h5 class="card-title" style="align-items: left;">TIME</h5> <!--fill the form out -->
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p> <!--put the time here-->
+      </div>
+    </div>
+  </div>
+  
 {% endblock %}
