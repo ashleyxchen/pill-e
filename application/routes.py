@@ -199,9 +199,6 @@ def pill1():
         session[request.form['pill1Name']] = True
         session[request.form['time1']] = True
 
-        
-
-        
     # if request.method == 'POST': 
     #     pill1Name = request.form["pill1Name"]
     #     return redirect(url_for('settings',settings=True, pill1Name=pill1Name))
