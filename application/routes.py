@@ -63,11 +63,10 @@ def home():
     pill1Hour = int(pill1Hour)
     pill1Min = pill1Time[3]
     pill1Min = int(pill1Min)
+    status1 = "Due"
     if hour >= pill1Hour:
         if min > pill1Min:
-            status1 = "Dispensed"
-    else:
-        status1 = "Due"
+            status1 = "Dispensed"        
 
     with open('pill2Configs.json') as pill2Config_file:
         pill2Configs = json.load(pill2Config_file)
