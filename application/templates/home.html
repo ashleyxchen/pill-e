@@ -16,6 +16,15 @@
         font-weight: 600;
         text-align: left;
     }
+    .card{
+    padding: 1.5em .5em .5em;
+    border-radius: 2em;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    width: 100%;
+    background-color: #fff;
+}
+
 </style>
 
 <div style="background-color:#7678ED; padding-top: 1em; padding-bottom: 0.4em; ">
@@ -23,7 +32,17 @@
 <h2>  &nbsp; Today is Sept {{ time.day }}th </h2> <!--hard code for now-->
 </div>
 
-<img src="../static/image/face.png" width = 100% alt="face" height = 100% style="position:relative; top:-100px;">
+<img src="../static/image/ourFace.png" width="100%" height="100%">
+
+<div class="card-deck mt-4" style="padding-left: 1em; padding-right: 1em;">
+    <div class="card text-center mt-5">
+      <div class="card-body">
+        <h5 class="card-title">TIME</h5> <!--fill the form out -->
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p> <!--put the time here-->
+      </div>
+    </div>
+  </div>
+
 
 
 {% endblock %}
