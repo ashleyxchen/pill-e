@@ -203,81 +203,66 @@ def pill2():
     pill2Count = 0
     pill2Dosage = 0
     pill2Name = ""
-    with open('pill2Configs.json', 'r+') as pill2Config_file:
-        pill2Configs = json.load(pill2Config_file)
-        pill2Name = pill2Configs['pill2Name']
-        pill2Config_file.close()
 
     if request.method == 'POST': 
         pill2Configs = {}
-        with open('pill2Configs.json') as pill2Config_file:
-            pill2Configs = json.load(pill2Config_file)
-            pill2Name = pill2Configs['pill2Name'] 
+        pill2Config_file = open('pill2Configs.json', 'r')
+        pill2Configs = json.load(pill2Config_file)
+        pill2Config_file.close()
+        print(request.form.keys())
 
-            if 'pill2Count' == request.form.keys():
-                pill2Count = int(request.form['pillCount'])
-                print(pill2Count)
-                pill2Configs['pillCount'] = pill2Count
-            else: pill2Count = pill2Configs['pillCount'] 
-            
+        if 'pill2Count' in request.form.keys():
+            pill2Count = int(request.form['pillCount'])
+            print(pill2Count)
+            pill2Configs['pillCount'] = pill2Count
+        else: pill2Count = pill2Configs['pillCount'] 
 
-            if 'pill2Dosage' == request.form.keys():
-                pill2Dosage = int(request.form['pill2Dosage'])
-                print(pill2Dosage)
-                pill2Configs['pillDosage'] = pill2Dosage
-            else: pill2Dosage = pill2Configs['pillDosage'] 
+        if 'pill2Dosage' in request.form.keys():
+            pill2Dosage = int(request.form['pill2Dosage'])
+            print(pill2Dosage)
+            pill2Configs['pillDosage'] = pill2Dosage
+        else: pill2Dosage = pill2Configs['pillDosage'] 
 
-            if 'pill2Name' == request.form.keys():
-                pill1Name = request.form.get('pill2Name')
-                print(pill1Name)
-                pill2Configs['pill2Name'] = pill1Name
-            else: pill2Name = pill2Configs['pill2Name'] 
+        if 'pill2Name' in request.form.keys():
+            pill1Name = request.form.get('pill2Name')
+            print(pill1Name)
+            pill2Configs['pill2Name'] = pill1Name
+        else: pill2Name = pill2Configs['pill2Name'] 
 
-            # not entering this if statement therefore not passed into json and stored
-            if 'time2' == request.form.keys():
-                time2 = request.form.get('time2')
-                print(time2)
-                pill2Configs['time2'] = str(time2)
-            else: 
-                time = pill2Configs['time']
-                print(time)
+        if 'time2' in request.form.keys():
+            time2 = request.form.get('time2')
+            print(time2)
+            pill2Configs['time2'] = str(time2)
+        else: 
+            time = pill2Configs['time']
+            print(time)
 
-            monday = request.form.get('monday')
-            if monday: pill2Configs['monday'] = bool(monday)
-            else: pill2Configs['monday'] = False
+        pill2Configs['monday'] = bool(request.form.get('monday'))
+        
+        pill2Configs['tuesday'] = bool(request.form.get('tuesday'))
 
-            tuesday = request.form.get('tuesday')
-            if tuesday: pill2Configs['tuesday'] = bool(tuesday)
-            else: pill2Configs['tuesday'] = False
+        pill2Configs['wednesday'] = bool(request.form.get('wednesday'))
 
-            wednesday = request.form.get('wednesday')
-            if wednesday: pill2Configs['wednesday'] = wednesday
-            else: pill2Configs['wednesday'] = False
+        pill2Configs['thursday'] = bool(request.form.get('thursday'))
 
-            thursday = request.form.get('thursday')
-            if thursday: pill2Configs['thursday'] = thursday
-            else: pill2Configs['thursday'] = False
+        pill2Configs['friday'] = bool(request.form.get('friday'))
 
-            friday = request.form.get('friday')
-            if friday: pill2Configs['friday'] = friday
-            else: pill2Configs['friday'] = False
+        pill2Configs['saturday'] = bool(request.form.get('saturday'))
 
-            saturday = request.form.get('saturday')
-            if saturday:pill2Configs['saturday'] = saturday
-            else: pill2Configs['saturday'] = False
+        pill2Configs['sunday'] = bool(request.form.get('sunday'))
 
-            sunday = request.form.get('sunday')
-            if sunday: pill2Configs['sunday'] = sunday
-            else: pill2Configs['sunday'] = False
+        pill2Config_file.close()
 
-            pill2Config_file.close()
+        print(pill2Configs)
+        
+        pill2Config_file = open('pill2Configs.json', 'w')
+        json.dump(pill2Configs, pill2Config_file)
+        pill2Config_file.close()
 
-        with open('pill2Configs.json', 'w') as pill2Config_file:
-            json.dump(pill2Configs, pill2Config_file)
-            session[request.form['pillCount']] = True
-            session[request.form['pillDosage']] = True
-            session[request.form['pill2Name']] = True
-            session[request.form['time']] = True
+        session[request.form['pillCount']] = True
+        session[request.form['pillDosage']] = True
+        session[request.form['pill2Name']] = True
+        session[request.form['time']] = True
 
     # if request.method == 'POST': 
     #     pill1Name = request.form["pill1Name"]
