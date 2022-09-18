@@ -176,29 +176,17 @@ def pill1():
 
         pill1Configs['monday1'] = bool(request.form.get('monday1'))
         
+        pill1Configs['tuesday1'] = bool(request.form.get('tuesday1'))
 
-        tuesday1 = request.form.get('tuesday1')
-        pill1Configs['tuesday1'] = bool(tuesday1)
+        pill1Configs['wednesday1'] = bool(request.form.get('wednesday1'))
 
-        wednesday1 = request.form.get('wednesday1')
-        if wednesday1: pill1Configs['wednesday1'] = bool(wednesday1)
-        else: pill1Configs['wednesday1'] = False
+        pill1Configs['thursday1'] = bool(request.form.get('thursday1'))
 
-        thursday1 = request.form.get('thursday1')
-        if thursday1: pill1Configs['thursday1'] = bool(thursday1)
-        else: pill1Configs['thursday1'] = False
+        pill1Configs['friday1'] = bool(request.form.get('friday1'))
 
-        friday1 = request.form.get('friday1')
-        if friday1: pill1Configs['friday1'] = bool(friday1)
-        else: pill1Configs['friday1'] = False
+        pill1Configs['saturday1'] = bool(request.form.get('saturday1'))
 
-        saturday1 = request.form.get('saturday1')
-        if saturday1:pill1Configs['saturday1'] = bool(saturday1)
-        else: pill1Configs['saturday1'] = False
-
-        sunday1 = request.form.get('sunday1')
-        if sunday1: pill1Configs['sunday1'] = bool(sunday1)
-        else: pill1Configs['sunday1'] = False
+        pill1Configs['sunday1'] = bool(request.form.get('sunday1'))
 
         print(pill1Configs)
         
