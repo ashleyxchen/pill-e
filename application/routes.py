@@ -1,7 +1,8 @@
 from hashlib import blake2b
 from application import app
 from flask import render_template, request, redirect, url_for, session, jsonify
-from datetime import date
+from datetime import date, datetime
+import datetime
 import json
 
 app.secret_key = "asdfghjkl"
@@ -245,7 +246,80 @@ def pill2():
     #     return redirect(url_for('settings',settings=True, pill1Name=pill1Name))
     return render_template('pill2.html', pill2 = True, pill2Name=pill2Name)
 
-
+# @app.before_first_request
 # def checkSchedule():
+#     while True:
+#         pill1Name = ""
+#         pill2Name = ""
+
+#         now = datetime.now()
+#         current_time = now.strftime("%H:%M")
+#         today = date.today()
+#         datetime.datetime.today()
+#         datetime.datetime(2012, 3, 23, 23, 24, 55, 173504)
+#         weekday = datetime.datetime.today().weekday()
+
+#         pill1Configs = {}
+#         pill1Config_file = open('pill1Configs.json', 'r')
+#         pill1Configs = json.load(pill1Config_file)
+#         pill1Config_file.close()
+#         pill1Name = pill1Configs['pill1Name']
+#         time1 = pill1Configs['time1']
+#         monday1 = pill1Configs['monday1']
+#         tuesday1 = pill1Configs['tuesday1']
+#         wednesday1 = pill1Configs['wednesday1']
+#         thursday1 = pill1Configs['thursday1']
+#         friday1 = pill1Configs['friday1']
+#         saturday1 = pill1Configs['saturday1']
+#         sunday1 = pill1Configs['sunday1']
+
+        
+
+#         if (time1 == str(current_time)):
+#             if (monday1 == True) and (weekday == "0"):
+#                 print("Current Time =", current_time)
+#             if (tuesday1 == True) and (weekday == "1"):
+#                 print("Current Time =", current_time)
+#             if (wednesday1 == True) and (weekday == "2"):
+#                 print("Current Time =", current_time)
+#             if (thursday1 == True) and (weekday == "3"):
+#                 print("Current Time =", current_time)
+#             if (friday1 == True) and (weekday == "4"):
+#                 print("Current Time =", current_time)
+#             if (saturday1 == True) and (weekday == "5"):
+#                 print("Current Time =", current_time)
+#             if (sunday1 == True) and (weekday == "6"):
+#                 print("Current Time =", current_time)
+
+
+#         pill2Configs = {}
+#         pill2Config_file = open('pill2Configs.json', 'r')
+#         pill2Configs = json.load(pill2Config_file)
+#         pill2Config_file.close()
+#         pill2Name = pill2Configs['pill2Name']
+#         time = pill2Configs['time']
+#         monday = pill1Configs['monday']
+#         tuesday = pill1Configs['tuesday']
+#         wednesday = pill1Configs['wednesday']
+#         thursday = pill1Configs['thursday']
+#         friday = pill1Configs['friday']
+#         saturday = pill1Configs['saturday']
+#         sunday = pill1Configs['sunday']
+
+#         if (time1 == str(current_time)):
+#             if (monday == True) and (weekday == "0"):
+#                 print("Current Time =", current_time)
+#             if (tuesday == True) and (weekday == "1"):
+#                 print("Current Time =", current_time)
+#             if (wednesday == True) and (weekday == "2"):
+#                 print("Current Time =", current_time)
+#             if (thursday == True) and (weekday == "3"):
+#                 print("Current Time =", current_time)
+#             if (friday == True) and (weekday == "4"):
+#                 print("Current Time =", current_time)
+#             if (saturday == True) and (weekday == "5"):
+#                 print("Current Time =", current_time)
+#             if (sunday == True) and (weekday == "6"):
+#                 print("Current Time =", current_time)
 
     
