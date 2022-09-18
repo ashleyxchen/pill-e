@@ -63,8 +63,7 @@ def home():
     pill1Hour = int(pill1Hour)
     pill1Min = pill1Time[3]
     pill1Min = int(pill1Min)
-
-    if hour > pill1Hour:
+    if hour >= pill1Hour:
         if min > pill1Min:
             status1 = "Dispensed"
     else:
@@ -83,12 +82,12 @@ def home():
     pill2Min = pill2Time[3]
     pill2Min = int(pill2Min)
     print(pill2Min)
-
-    if hour > pill2Hour:
+   
+    status2 = "Due"
+    if hour >= pill2Hour:
         if min > pill1Min:
             status2 = "Dispensed"
-    else:
-        status2 = "Due"
+        
 
     return render_template('home.html', home = True, 
     pill1Name = pill1Name, 
