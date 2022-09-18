@@ -37,75 +37,68 @@
     <div class="form-group row">
       <label for="pill1Name" class="col-sm-2 col-form-label" id="pill1Name" name="pill1Name">Pill Name</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="pill1Name" name= "pill1Name" placeholder="Pill">
+        <input type="text" class="form-control" id="pill1Name" name= "pill1Name" placeholder="Pill" >
       </div>
     </div>
 
     <div class="form-group row">
       <label for="totalPill1" class="col-sm-2 col-form-label">Total Pills</label>
       <div class="col-sm-10">
-        <input type="number" class="form-control" id="totalPill1" placeholder="Total pills">
+        <input type="number" class="form-control" id="pillCount" placeholder="Total pills" name="pillCount" value="" >
       </div>
     </div>
 
       <div class="form-group row">
         <label for="dosagePill1" class="col-sm-2 col-form-label">Pills per Day</label>
         <div class="col-sm-10">
-          <input type="number" class="form-control" id="dosagePill1" placeholder="Dosage">
+          <input type="number" class="form-control" id="pillDosage" name="pillDosage" placeholder="Dosage" value="" >
         </div>
       </div>
 
       <div class="form-group" style="padding-top: 0.5em;">
         <label for="weekdays">Days of the Week</label>
-      <div class="form-check" style="padding-top: 0.2em;">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-        <label class="form-check-label" for="defaultCheck1">
-          Monday
-        </label>
+        <div class="form-check" style="padding-top: 0.2em;">
+          <input class="form-check-input" type="checkbox" value=true id="defaultCheck1" name="monday">
+          <label class="form-check-label" for="defaultCheck1">Monday</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value=true id="defaultCheck1" name="tuesday">
+          <label class="form-check-label" for="defaultCheck1">Tuesday</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value=true id="defaultCheck1" name="wednesday">
+          <label class="form-check-label" for="defaultCheck1">Wednesday</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value=true id="defaultCheck1" name="thursday">
+          <label class="form-check-label" for="defaultCheck1">Thursday</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value=true id="defaultCheck1" name="friday">
+          <label class="form-check-label" for="defaultCheck1">Friday</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value=true id="defaultCheck1" name="saturday">
+          <label class="form-check-label" for="defaultCheck1">Saturday</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value=true id="defaultCheck1" name="sunday">
+          <label class="form-check-label" for="defaultCheck1">Sunday</label>
+        </div>
+
+        <small id="emailHelp" class="form-text text-muted">Days of the week the drug should be dispensed</small>
       </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-        <label class="form-check-label" for="defaultCheck1">
-          Tuesday
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-        <label class="form-check-label" for="defaultCheck1">
-          Wednesday
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-        <label class="form-check-label" for="defaultCheck1">
-          Thursday
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-        <label class="form-check-label" for="defaultCheck1">
-          Friday
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-        <label class="form-check-label" for="defaultCheck1">
-          Saturday
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-        <label class="form-check-label" for="defaultCheck1">
-          Sunday
-        </label>
-      </div>
-      <small id="emailHelp" class="form-text text-muted">Days of the week the drug should be dispensed</small>
-    </div>
     
       <div class="form-group row">
         <label for="timePill1" class="col-sm-2 col-form-label">Times</label>
         <div class="col-sm-10">
-          <input type="time" class="form-control" id="dosagePill1" placeholder="Time">
+          <input type="time" class="col-sm-2 col-form-label" id="time" placeholder="Time" name="time">
           <small id="emailHelp" class="form-text text-muted">Time of day the drug should be dispensed</small>
         </div>
       </div>
