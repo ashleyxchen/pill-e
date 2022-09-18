@@ -30,10 +30,10 @@
     <a class="navbar-brand" href="settings">
         <img src="../../static/image/backbutton.png" width="50" height="40" class="d-inline-block align-top" alt="" style="padding-left: 0.4em;">
       </a>
-      <h3 style="align-items:center; padding-top: 0.2em; padding-right: 3.6em; "> Edit </h3>
+      <h3 style="align-items:center; padding-top: 0.2em; padding-right: 3.6em; "> {{ pill1Name }} </h3>
 </nav>
 
-<form action="{{ url_for('settings') }}" method="post" style="padding-left:1em; padding-right: 1em; padding-top: 1em;">
+<form action="{{ url_for('pill1') }}" method="post" style="padding-left:1em; padding-right: 1em; padding-top: 1em;">
     <div class="form-group row">
       <label for="pill1Name" class="col-sm-2 col-form-label" id="pill1Name" name="pill1Name">Pill Name</label>
       <div class="col-sm-10">
@@ -44,51 +44,51 @@
     <div class="form-group row">
       <label for="totalPill1" class="col-sm-2 col-form-label">Total Pills</label>
       <div class="col-sm-10">
-        <input type="number" class="form-control" id="pillCount" placeholder="Total pills" name="pillCount" value="" >
+        <input type="number" class="form-control" id="pill1Count" placeholder="Total pills" name="pill1Count" value="" >
       </div>
     </div>
 
       <div class="form-group row">
         <label for="dosagePill1" class="col-sm-2 col-form-label">Pills per Day</label>
         <div class="col-sm-10">
-          <input type="number" class="form-control" id="pillDosage" name="pillDosage" placeholder="Dosage" value="" >
+          <input type="number" class="form-control" id="pill1Dosage" name="pill1Dosage" placeholder="Dosage" value="" >
         </div>
       </div>
 
       <div class="form-group" style="padding-top: 0.5em;">
         <label for="weekdays">Days of the Week</label>
         <div class="form-check" style="padding-top: 0.2em;">
-          <input class="form-check-input" type="checkbox" value=true id="defaultCheck1" name="monday">
+          <input class="form-check-input" type="checkbox" value=true id="defaultCheck1" name="monday1">
           <label class="form-check-label" for="defaultCheck1">Monday</label>
         </div>
 
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value=true id="defaultCheck1" name="tuesday">
+          <input class="form-check-input" type="checkbox" value=true id="defaultCheck1" name="tuesday1">
           <label class="form-check-label" for="defaultCheck1">Tuesday</label>
         </div>
 
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value=true id="defaultCheck1" name="wednesday">
+          <input class="form-check-input" type="checkbox" value=true id="defaultCheck1" name="wednesday1">
           <label class="form-check-label" for="defaultCheck1">Wednesday</label>
         </div>
 
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value=true id="defaultCheck1" name="thursday">
+          <input class="form-check-input" type="checkbox" value=true id="defaultCheck1" name="thursday1">
           <label class="form-check-label" for="defaultCheck1">Thursday</label>
         </div>
 
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value=true id="defaultCheck1" name="friday">
+          <input class="form-check-input" type="checkbox" value=true id="defaultCheck1" name="friday1">
           <label class="form-check-label" for="defaultCheck1">Friday</label>
         </div>
 
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value=true id="defaultCheck1" name="saturday">
+          <input class="form-check-input" type="checkbox" value=true id="defaultCheck1" name="saturday1">
           <label class="form-check-label" for="defaultCheck1">Saturday</label>
         </div>
 
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value=true id="defaultCheck1" name="sunday">
+          <input class="form-check-input" type="checkbox" value=true id="defaultCheck1" name="sunday1">
           <label class="form-check-label" for="defaultCheck1">Sunday</label>
         </div>
 
@@ -98,7 +98,7 @@
       <div class="form-group row">
         <label for="timePill1" class="col-sm-2 col-form-label">Times</label>
         <div class="col-sm-10">
-          <input type="time" class="col-sm-2 col-form-label" id="time" placeholder="Time" name="time">
+          <input type="time" class="col-sm-2 col-form-label" id="time1" placeholder="Time" name="time1">
           <small id="emailHelp" class="form-text text-muted">Time of day the drug should be dispensed</small>
         </div>
       </div>

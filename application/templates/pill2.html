@@ -1,0 +1,112 @@
+{% extends "pilllayout.html" %}
+
+{% block content %}
+<style>
+    h1 {
+        color: #3D348B;
+        font-family: 'Enriqueta', arial, serif;
+        font-size: 42px;
+        font-weight: 800;
+        text-align: left;
+
+    }
+    h2 {
+        color:#F7B801;
+        font-family: 'Enriqueta', arial, serif;
+        font-weight: 600;
+        text-align: left;
+    }
+    h3 {
+        color: #fff;
+        font-family: 'Enriqueta', arial, serif;
+        font-size: 42px;
+        font-weight: 800;
+        text-align: center;
+
+    }
+</style>
+
+<nav class="navbar navbar-light" style="background-color: #3D348B;">
+    <a class="navbar-brand" href="settings">
+        <img src="../../static/image/backbutton.png" width="50" height="40" class="d-inline-block align-top" alt="" style="padding-left: 0.4em;">
+      </a>
+      <h3 style="align-items:center; padding-top: 0.2em; padding-right: 3.6em; ">{{ pill2Name }}</h3>
+</nav>
+
+<form action="{{ url_for('pill2') }}" method="post" style="padding-left:1em; padding-right: 1em; padding-top: 1em;">
+    <div class="form-group row">
+      <label for="pill2Name" class="col-sm-2 col-form-label" id="pill2Name" name="pill2Name">Pill Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="pill1Name" name= "pill2Name" placeholder="Pill" >
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="totalPill2" class="col-sm-2 col-form-label">Total Pills</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" id="pillCount" placeholder="Total pills" name="pill2Count" value="" >
+      </div>
+    </div>
+
+      <div class="form-group row">
+        <label for="dosagePill2" class="col-sm-2 col-form-label">Pills per Day</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="pillDosage" name="pill2Dosage" placeholder="Dosage" value="" >
+        </div>
+      </div>
+
+      <div class="form-group" style="padding-top: 0.5em;">
+        <label for="weekdays">Days of the Week</label>
+        <div class="form-check" style="padding-top: 0.2em;">
+          <input class="form-check-input" type="checkbox" value=true id="defaultCheck1" name="monday">
+          <label class="form-check-label" for="defaultCheck1">Monday</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value=true id="defaultCheck1" name="tuesday">
+          <label class="form-check-label" for="defaultCheck1">Tuesday</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value=true id="defaultCheck1" name="wednesday">
+          <label class="form-check-label" for="defaultCheck1">Wednesday</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value=true id="defaultCheck1" name="thursday">
+          <label class="form-check-label" for="defaultCheck1">Thursday</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value=true id="defaultCheck1" name="friday">
+          <label class="form-check-label" for="defaultCheck1">Friday</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value=true id="defaultCheck1" name="saturday">
+          <label class="form-check-label" for="defaultCheck1">Saturday</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value=true id="defaultCheck1" name="sunday">
+          <label class="form-check-label" for="defaultCheck1">Sunday</label>
+        </div>
+
+        <small id="emailHelp" class="form-text text-muted">Days of the week the drug should be dispensed</small>
+      </div>
+    
+      <div class="form-group row">
+        <label for="timePill1" class="col-sm-2 col-form-label">Times</label>
+        <div class="col-sm-10">
+          <input type="time" class="col-sm-2 col-form-label" id="time" placeholder="Time" name="time">
+          <small id="emailHelp" class="form-text text-muted">Time of day the drug should be dispensed</small>
+        </div>
+      </div>
+      
+      <div class="col-sm-10">
+        <button type="submit" class="btn btn-primary">Done</button>
+      </div>
+    </div>
+  </form>
+
+{% endblock %}
