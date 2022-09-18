@@ -53,16 +53,20 @@ def home():
 
 @app.route('/settings', methods=['GET', 'POST'])
 def settings():
-    pill1Configs = {}
-    with open('pill1Configs.json') as pill1Config_file:
-        pill1Configs = json.load(pill1Config_file)
-        pill1Name = pill1Configs['pill1Name']
-        pill1Config_file.close()
+    pill1Name = ""
+    pill2Name = ""
 
-    with open('pill2Configs.json') as pill2Config_file:
-        pill2Configs = json.load(pill2Config_file)
-        pill2Name = pill2Configs['pill2Name']
-        pill2Config_file.close()
+    pill1Configs = {}
+    pill1Config_file = open('pill1Configs.json', 'r')
+    pill1Configs = json.load(pill1Config_file)
+    pill1Config_file.close()
+    pill1Name = pill1Configs['pill1Name']
+
+    pill2Configs = {}
+    pill2Config_file = open('pill2Configs.json', 'r')
+    pill2Configs = json.load(pill2Config_file)
+    pill2Config_file.close()
+    pill2Name = pill2Configs['pill2Name']
    
     return render_template("settings.html", settings=True, pill1Name=pill1Name, pill2Name=pill2Name)
     
@@ -240,4 +244,8 @@ def pill2():
     #     pill1Name = request.form["pill1Name"]
     #     return redirect(url_for('settings',settings=True, pill1Name=pill1Name))
     return render_template('pill2.html', pill2 = True, pill2Name=pill2Name)
+
+
+# def checkSchedule():
+
     
