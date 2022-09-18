@@ -218,28 +218,28 @@ def pill2():
         pill2Config_file.close()
         print(request.form.keys())
 
-        if 'pill2Count' in request.form.keys():
+        if 'pillCount' in request.form.keys():
             pill2Count = int(request.form['pillCount'])
             print(pill2Count)
             pill2Configs['pillCount'] = pill2Count
         else: pill2Count = pill2Configs['pillCount'] 
 
-        if 'pill2Dosage' in request.form.keys():
-            pill2Dosage = int(request.form['pill2Dosage'])
+        if 'pillDosage' in request.form.keys():
+            pill2Dosage = int(request.form['pillDosage'])
             print(pill2Dosage)
             pill2Configs['pillDosage'] = pill2Dosage
         else: pill2Dosage = pill2Configs['pillDosage'] 
 
         if 'pill2Name' in request.form.keys():
-            pill1Name = request.form.get('pill2Name')
-            print(pill1Name)
-            pill2Configs['pill2Name'] = pill1Name
+            pill2Name = request.form.get('pill2Name')
+            print(pill2Name)
+            pill2Configs['pill2Name'] = pill2Name
         else: pill2Name = pill2Configs['pill2Name'] 
 
-        if 'time2' in request.form.keys():
-            time2 = request.form.get('time2')
-            print(time2)
-            pill2Configs['time2'] = str(time2)
+        if 'time' in request.form.keys():
+            time = request.form.get('time')
+            print(time)
+            pill2Configs['time'] = str(time)
         else: 
             time = pill2Configs['time']
             print(time)
@@ -266,10 +266,11 @@ def pill2():
         json.dump(pill2Configs, pill2Config_file)
         pill2Config_file.close()
 
-        session[request.form['pillCount']] = True
-        session[request.form['pillDosage']] = True
-        session[request.form['pill2Name']] = True
-        session[request.form['time']] = True
+        # session[request.form['pillCount']] = True
+        # session[request.form['pillDosage']] = True
+        # session[request.form['pill2Name']] = True
+        # session[request.form['time']] = True
+    return render_template('pill2.html', pill2Name=pill2Name, pill2 = True)
 
 @app.route('/camera')
 def camera():
